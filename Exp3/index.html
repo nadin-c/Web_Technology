@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GST Calculator</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body class="d-flex justify-content-center">
+    <div class="container mt-5">
+        <h1 class="text-center">Sony</h1>
+        <br>
+        <form id="gstForm">
+            <div class="form-group row shadow p-2 mb-2 bg-white rounded">
+                <label for="Name" class="col-sm-2 col-form-label border rounded form-group">Name</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control is-invalid" id="Name" placeholder="Enter the customer Name"
+                        required>
+                    <div class="invalid-feedback">Please provide a valid name.</div>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="form-group row shadow p-2 mb-2 bg-white rounded">
+                <label for="customerAddress" class="col-sm-2 col-form-label border rounded form-group">Address</label>
+                <div class="col-sm-10">
+                    <textarea class="form-control is-invalid" id="customerAddress" rows="1"
+                        placeholder="Enter the customer Address" required></textarea>
+                    <div class="invalid-feedback">Please provide the address.</div>
+                </div>
+            </div>
+            <br>
+
+            <div class="form-group row shadow p-2 mb-2 bg-white rounded">
+                <label for="productDropdown" class="col-sm-2 col-form-label border rounded form-group">Products</label>
+                <div class="col-sm-10">
+                    <select class="form-control" id="productDropdown" required>
+                        <option value="" disabled selected>Select a product</option>
+                        <option value="product1">Sony Bravia 108 cm (43 inches) 4K Ultra HD Smart LED Google TV
+                            KD-43X74K (Black)</option>
+                        <option value="product2">Sony Bravia 164 cm (65 inches) XR Series 4K Ultra HD Smart OLED Google
+                            TV XR-65A95K (Black)</option>
+                        <option value="product3">Sony Bravia 108 cm (43 inches) 4K Ultra HD Smart LED Google TV
+                            KD-43X80L (Black)</option>
+                    </select>
+                </div>
+            </div>
+            <br>
+
+            <div class="form-group row shadow p-2 mb-2 bg-white rounded">
+                <label for="Quantity" class="col-sm-2 col-form-label border rounded">Quantity</label>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control" id="Quantity" placeholder="Number of Items" min="1"
+                        max="10" value="1" required>
+                </div>
+            </div>
+            <br>
+
+            <div class="form-group row shadow p-2 mb-2 bg-white rounded">
+                <label class="col-sm-2 col-form-label border rounded">Payment</label>
+                <div class="col-sm-10">
+                    <div class="form-check form-check-inline is-invalid">
+                        <input class="form-check-input" type="radio" name="paymentMethod" id="cashRadio" value="cash">
+                        <label class="form-check-label" for="cashRadio">Cash</label>
+                    </div>
+
+                    <div class="form-check form-check-inline p-2">
+                        <input class="form-check-input " type="radio" name="paymentMethod" id="gpayRadio" value="gpay">
+                        <label class="form-check-label" for="gpayRadio">GPay</label>
+                    </div>
+                    <!-- <div class="invalid-feedback">Please select the paymentMethod.</div> -->
+                </div>
+            </div>
+
+            <!-- Calculate button -->
+            <div class="text-center mt-3">
+                <button type="button" class="btn btn-primary shadow p-2 mb-2 rounded"
+                    id="calculateBtn">Calculate</button>
+            </div>
+        </form>
+        <br>
+
+        <div class="mt-3">
+            <h4 class="h3">Calculated GST Amount</h4>
+            <p id="result"> </p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
