@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Register form</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</head>
+
+<body class="d-flex justify-content-center">
+
+    <!-- title -->
+    <div class="container mt-5 rounded-5 p-5" style="background-color: whitesmoke">
+        <h1 class="text-center">User Registration Form</h1>
+        <br>
+
+
+        <form id="Registeration">
+
+            <!-- Name -->
+            <div class="form-group row shadow p-4 mb-2 bg-white rounded mt-4">
+                <label for="name" class="col-sm-2 col-form-label border rounded">Name</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                    <div class="invalid-feedback">Please provide a valid Name</div>
+                </div>
+            </div>
+
+
+            <!-- Gender -->
+            <div class="form-group row shadow p-4 mb-2 bg-white rounded mt-4">
+                <label for="Gender" class="col-sm-2 col-form-label border rounded">Gender</label>
+                <div class="col-sm-10">
+
+                    <!-- Male Radio Button -->
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="Gender" id="maleRadio">
+                        <label class="form-check-label" for="maleRadio">Male</label>
+                    </div>
+
+                    <!-- Female Radio Button -->
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="Gender" id="femaleRadio">
+                        <label class="form-check-label" for="femaleRadio">Female</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- language Known -->
+            <div class="form-group row shadow p-4 mb-2 bg-white rounded mt-4">
+                <label for="Gender" class="col-sm-2 col-form-label border rounded">Language Known</label>
+                <div class="col-sm-10">
+
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+                        <label class="form-check-label" for="flexCheckIndeterminate">
+                            Tamil
+                        </label>
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+                        <label class="form-check-label" for="flexCheckIndeterminate">
+                            English
+                        </label>
+                    </div>
+
+                    <div class="form-check form-check-inline ">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+                        <label class="form-check-label" for="flexCheckIndeterminate">
+                            Hindi
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Select District -->
+            <div class="form-group row shadow p-4 mb-2 bg-white rounded mt-4">
+                <label for="District" class="col-sm-2 col-form-label border rounded">Select District</label>
+                <div class="col-sm-10">
+                    <div class="form-control">
+                        <select class="form-select" id="districtSelect">
+                            <option selected>Select District</option>
+                            <option value="1">Erode</option>
+                            <option value="2">Trichy</option>
+                            <option value="3">Coimbatore</option>
+                            <option value="4">Namakal</option>
+                            <option value="5">Theni</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- address -->
+            <div class="form-group row shadow p-4 mb-2 bg-white rounded mt-4 ">
+                <label for="Address" class="col-sm-2 col-form-label border rounded form-group">Address</label>
+                <div class="col-sm-10">
+                    <textarea class="form-control" id="Address" rows="3x" placeholder="Enter Your Address"></textarea>
+                </div>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group row shadow p-4 mb-2 bg-white rounded mt-4">
+                <label for="email" class="col-sm-2 col-form-label border rounded form-group">Email</label>
+                <div class="col-sm-10">
+                    <input type="email" class="form-control" id="email" placeholder="Enter Your Email">
+                    <span id="emailError" class="error"></span>
+                </div>
+            </div>
+
+            <!-- phone number -->
+            <div class="form-group row shadow p-4 mb-2 bg-white rounded mt-4">
+                <label for="phone" class="col-sm-2 col-form-label border rounded">Phone</label>
+                <div class="col-sm-10">
+                    <input type="tel" class="form-control" id="phone" placeholder="Enter Your Number">
+                </div>
+            </div>
+
+            <!-- Username -->
+            <div class="form-group row shadow p-4 mb-2 bg-white rounded mt-4 ">
+                <label for="Username" class="col-sm-2 col-form-label border rounded">Username</label>
+                <div class="col-sm-10 d-flex align-items-center">
+                    <span class="input-group-text">@</span>
+                    <input type="text" class="form-control" id="Username" placeholder="Enter Your Username">
+                </div>
+            </div>
+
+            <!-- password -->
+            <div class="form-group row shadow p-4 mb-2 bg-white rounded mt-4">
+                <label for="password" class="col-sm-2 col-form-label border rounded">Password</label>
+                <div class="col-sm-10">
+                    <input type="password" class="form-control" id="password" placeholder="Enter Your Password">
+                </div>
+            </div>
+
+            <!-- Submit button -->
+            <div class="row justify-content-center">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-10 text-center mt-5" style="margin-right: 8%;">
+                    <button type="button" onclick="validateEmail()">Submit</button>
+                </div>
+            </div>
+
+        </form>
+
+</body>
+
+</html>
