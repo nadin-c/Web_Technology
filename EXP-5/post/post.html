@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Get</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2 class="text-center font-weight-bold">User Login</h2>
+        <form action="http://localhost:6070/login" method="post">
+            <div class="form-group">
+                <label for="username"><b>NAME :</b></label>
+                <input type="text" class="form-control" id="username" name="username" value="">
+            </div>
+            <div class="form-group">
+                <label for="id"><b>ID :</b></label>
+                <input type="text" class="form-control" id="id" name="id" value="">
+            </div>
+            <div class="form-group">
+                <label for="branch"><b>BRANCH :</b></label>
+                <select class="form-control" id="branch" name="branch">
+                    <option value="">Choose the Department</option>
+                    <option value="IT">IT</option>
+                    <option value="CSE">CSE</option>
+                    <option value="AIML">AIML</option>
+                    <option value="AIDS">AIDS</option>
+                    <option value="CSD">CSD</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="gender"><b>GENDER :</b></label><br>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gender" id="female" value="FEMALE">
+                    <label class="form-check-label" for="female">FEMALE</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gender" id="male" value="MALE">
+                    <label class="form-check-label" for="male">MALE</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="phno"><b>MOBILE NO :</b></label>
+                <input type="text" class="form-control" id="phno" name="phno" value="">
+            </div>
+            <div class="form-group">
+                <label for="branchadd"><b>BRANCH ADDRESS :</b></label>
+                <input type="text" class="form-control" id="branchadd" name="branchadd" value="">
+            </div>
+            <input type="submit" class="btn btn-primary" name="login" value="Login">
+        </form>
+    </div>
+</body>
+
+</html>
