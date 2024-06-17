@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <script src="./js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body style="background-color: rgb(164, 188, 211);">
+    <div class="container mt-2">
+        <h1 class="text-center mb-5">Registration Form</h1>
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-8 col-sm-10 bg-light p-5 rounded shadow-sm">
+                <form name="userForm" action="" method="post" class="needs-validation" novalidate>
+                    <div class="mb-3">
+                        <label for="floatingName" class="form-label">Name</label>
+                        <input type="text" name="Name" class="form-control" id="floatingName" placeholder="Name"
+                            required>
+                        <div class="invalid-feedback">Please enter your name.</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="floatingDOB" class="form-label">Date of Birth</label>
+                        <input type="date" name="DOB" class="form-control" id="floatingDOB" required>
+                        <div class="invalid-feedback">Please enter your date of birth.</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="floatingEmail" class="form-label">Email address</label>
+                        <input type="email" name="Email" class="form-control" id="floatingEmail"
+                            placeholder="name@example.com" required>
+                        <div class="invalid-feedback">Please enter a valid email address.</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="floatingPhone" class="form-label">Phone Number</label>
+                        <input type="tel" name="Phone" class="form-control" id="floatingPhone"
+                            placeholder="123-456-7890" required>
+                        <div class="invalid-feedback">Please enter your phone number.</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="floatingRegNo" class="form-label">Register Number</label>
+                        <input type="text" name="Register Number" class="form-control" id="floatingRegNo"
+                            placeholder="Register Number" required>
+                        <div class="invalid-feedback">Please enter your register number.</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="floatingDepartment" class="form-label">Department</label>
+                        <select name="Department" class="form-select" id="floatingDepartment" required>
+                            <option value="" selected>Choose Your Department</option>
+                            <option value="IT">Information Technology</option>
+                            <option value="CSE">Computer Science Engineering</option>
+                            <option value="CSD">Computer Science And Design</option>
+                            <option value="AIML">Artificial Intelligence and Machine Learning</option>
+                            <option value="AIDS">Artificial Intelligence and Data Science</option>
+                        </select>
+                        <div class="invalid-feedback">Please select your department.</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="floatingYear" class="form-label">Year of Study</label>
+                        <input type="number" min="1" max="4" name="Year" class="form-control" id="floatingYear"
+                            placeholder="Year of Study" required>
+                        <div class="invalid-feedback">Please enter your year of study (1-4).</div>
+                    </div><br>
+
+                    <div class="d-grid gap-2 d-md-flex justify-content-center ">
+                        <button type="button" onclick="submitAction('insert')"
+                            class="btn btn-dark me-md-2 rounded-5 ">Insert</button>
+                        <button type="button" onclick="submitAction('view')"
+                            class="btn btn-dark me-md-2 rounded-5">View</button>
+                        <button type="button" onclick="submitAction('update')"
+                            class="btn btn-dark me-md-2 rounded-5">Update</button>
+                        <button type="button" onclick="submitAction('delete')"
+                            class="btn btn-dark rounded-5">Delete</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function () {
+            'use strict'
+            const forms = document.querySelectorAll('.needs-validation')
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+                    form.classList.add('was-validated')
+                }, false)
+            })
+        })()
+
+        function submitAction(path) {
+            let userForm = document.querySelector('form[name="userForm"]');
+
+            // Reset required attribute for all fields
+            userForm.querySelectorAll('input, select').forEach(field => {
+                field.removeAttribute('required');
+            });
+
+            // Add required attribute for input fields based on button clicked
+            switch (path) {
+                case 'insert':
+                    userForm.querySelectorAll('input, select').forEach(field => {
+                        field.setAttribute('required', '');
+                    });
+                    break;
+
+                case 'update':
+                case 'delete':
+                    userForm.querySelector('input[name="Register Number"]').setAttribute('required', '');
+                    break;
+            }
+
+            userForm.action = `http://localhost:3001/${path}`;
+            console.log(userForm.action);
+            userForm.submit();
+        }
+    </script>
+
+</body>
+
+</html>
