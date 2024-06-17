@@ -1,0 +1,130 @@
+/* Reset default list styles for the navbar */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 2rem;
+}
+
+/* Remove default underline from links and set text color */
+a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #fff;
+  transition: color 0.3s ease;
+  /* Smooth color transition */
+}
+
+/* Style for active link */
+a.active {
+  font-weight: bold;
+}
+
+/* Override Bootstrap styles for the navbar */
+.navbar {
+  background-color: #1a1a1a;
+  /* Darker background */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  /* Stronger shadow for depth */
+  padding: 15px 30px;
+  /* Increased padding for more space */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+/* Style for the navbar brand (logo or text) */
+.navbar-brand {
+  font-size: 2rem;
+  /* Increased font size of brand */
+  font-weight: bold;
+  /* Make brand bold */
+  color: #ff9800;
+  /* Highlight color for the brand */
+  text-decoration: none;
+  /* Remove underline from brand link */
+  transition: color 0.3s ease;
+  /* Smooth color transition */
+}
+
+.navbar-brand:hover {
+  color: #e68900;
+  /* Slightly darker highlight on hover */
+}
+
+/* Adjust margin between navbar items */
+.navbar-nav {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-nav .nav-item {
+  padding: 10px 15px;
+  /* Adjust padding inside nav items */
+  margin-right: 10px;
+  /* Adjust spacing between nav items */
+  transition: background-color 0.3s ease, border-radius 0.3s ease;
+  /* Smooth hover effect */
+}
+
+.nav-item:hover {
+  background-color: #333;
+  /* Darker background on hover */
+  border-radius: 8px;
+  /* Rounded corners for nav items */
+}
+
+/* Style for navbar links */
+.nav-link {
+  color: #ddd;
+  /* Light grey color for nav links */
+  transition: color 0.3s ease;
+  /* Smooth color transition */
+}
+
+/* Change text color on hover */
+.nav-link:hover {
+  color: #ff9800;
+  /* Highlight color on hover */
+}
+
+/* Style for active nav link */
+.nav-link.active {
+  font-weight: bold;
+  /* Make active nav item bold */
+  color: #ff9800;
+  /* Highlight color for active nav item */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    /* Stack elements vertically on smaller screens */
+    align-items: flex-start;
+    /* Align items to start */
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    /* Stack nav items vertically */
+    width: 100%;
+    /* Full width */
+  }
+
+  .nav-item {
+    width: 100%;
+    /* Full width for nav items */
+    text-align: left;
+    /* Align text to left */
+    margin: 5px 0;
+    /* Adjust margin */
+  }
+
+  .navbar-brand {
+    margin-bottom: 15px;
+    /* Add space below brand */
+  }
+}
